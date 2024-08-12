@@ -21,7 +21,7 @@ export function HelloWorld() {
   button.innerHTML = scaleValues[index];
   document.body.appendChild(button);
 
-  const synth = new Tone.Synth().toMaster();
+  const synth = new Tone.Synth().toDestination();
 
   button.addEventListener('click', () => {
     // synth.triggerAttackRelease('音階名', '音符の長さ[8n = 8分音符]')

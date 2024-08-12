@@ -9,7 +9,7 @@ export function HelloSequence1() {
   document.body.appendChild(button);
   button.addEventListener('click', () => Tone.Transport.start());
 
-  const synth = new Tone.Synth().toMaster();
+  const synth = new Tone.Synth().toDestination();
   // https://tonejs.github.io/docs/13.8.25/Sequence
   // Tone.Sequence(callback: Function, event: Array, subdivision: Time)
   const sequence = new Tone.Sequence(
@@ -17,7 +17,7 @@ export function HelloSequence1() {
       synth.triggerAttackRelease(note, noteLengh, time);
     },
     data,
-    noteLengh
+    noteLengh,
   ).start(0);
   sequence.loop = false;
 }
