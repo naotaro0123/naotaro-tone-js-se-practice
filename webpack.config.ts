@@ -1,17 +1,12 @@
-import { Rule, Module, Configuration } from 'webpack';
-import * as path from 'path';
+import type { Configuration, RuleSetRule } from 'webpack';
 
-const rules: Rule[] = [
+const rules: RuleSetRule[] = [
   {
     exclude: /node_modules/,
     test: /\.ts$/,
     use: 'ts-loader',
   },
 ];
-
-const module: Module = {
-  rules,
-};
 
 const config: Configuration = {
   mode: 'development',
@@ -21,17 +16,13 @@ const config: Configuration = {
   output: {
     path: `${__dirname}/dist`,
   },
+  module: {
+    rules,
+  },
   resolve: {
     extensions: ['.ts', '.js'],
   },
-  module,
-  devServer: {
-    contentBase: path.resolve(__dirname, './src'),
-    watchContentBase: true,
-    port: 4000,
-    open: true,
-    openPage: './index.html',
-  },
+  devtool: 'eval-source-map',
 };
 
 export default config;
