@@ -443,9 +443,9 @@ export function HelloMarioBgm1() {
   button.innerHTML = 'SE再生';
   document.body.appendChild(button);
   // テンポ(1分間に180回 * n刻む)
-  Tone.Transport.bpm.value = 180 * 3.5;
+  Tone.getTransport().bpm.value = 180 * 3.5;
   button.addEventListener('click', () => {
-    Tone.Transport.start();
+    Tone.getTransport().start();
   });
   new ToneSequence(melody1);
   new ToneSequence(melody2);

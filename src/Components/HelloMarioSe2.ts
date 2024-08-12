@@ -22,11 +22,11 @@ export function HelloMarioSe2() {
   button.innerHTML = 'SE再生';
   document.body.appendChild(button);
   // テンポ
-  Tone.Transport.bpm.value = 200 * 4;
+  Tone.getTransport().bpm.value = 200 * 4;
   button.addEventListener('click', () => {
-    Tone.Transport.start();
+    Tone.getTransport().start();
     setTimeout(() => {
-      Tone.Transport.stop();
+      Tone.getTransport().stop();
     }, 1000);
   });
   new ToneSequence(damageSound);

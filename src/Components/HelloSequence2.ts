@@ -1,6 +1,6 @@
 // reference: https://qiita.com/talow1/items/0ad112a698df7c21348d
 import * as Tone from 'tone';
-import { NoteType, getNote } from '../models/Note';
+import { NoteType } from '../models/Note';
 import { ToneSequence } from '../models/ToneSequence';
 
 const melody: NoteType[] = [
@@ -33,9 +33,9 @@ export function HelloSequence2() {
   button.innerHTML = 'SE再生';
   document.body.appendChild(button);
   // テンポ(1分間に180回 * n刻む)
-  Tone.Transport.bpm.value = 180 * 3;
+  Tone.getTransport().bpm.value = 180 * 3;
   button.addEventListener('click', () => {
-    Tone.Transport.start();
+    Tone.getTransport().start();
   });
   new ToneSequence(melody);
   new ToneSequence(base);

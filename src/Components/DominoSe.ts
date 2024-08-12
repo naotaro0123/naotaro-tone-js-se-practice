@@ -1,18 +1,19 @@
 import * as Tone from 'tone';
-import { NoteType, getNote } from '../models/Note';
+import { NoteType } from '../models/Note';
 import { ToneSequence } from '../models/ToneSequence';
 
 const coinSound: NoteType[] = [
-  { ...getNote('si+1'), dur: '8n' },
-  { ...getNote('mi+2'), dur: '4n' },
+  { note: 'G5', dur: '8n' },
+  // { ...getNote('si+1'), dur: '8n' },
+  // { ...getNote('mi+2'), dur: '8n' },
 ];
 
-export function HelloMarioSe1() {
+export function DominoSe() {
   const button = document.createElement('button');
   button.innerHTML = 'SE再生';
   document.body.appendChild(button);
   // テンポ
-  Tone.getTransport().bpm.value = 200 * 4;
+  Tone.getTransport().bpm.value = 200 * 8;
   button.addEventListener('click', () => {
     Tone.getTransport().start();
     setTimeout(() => {
