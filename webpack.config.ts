@@ -1,5 +1,7 @@
 import type { Configuration, RuleSetRule } from 'webpack';
 
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+
 const rules: RuleSetRule[] = [
   {
     exclude: /node_modules/,
@@ -23,6 +25,11 @@ const config: Configuration = {
     extensions: ['.ts', '.js'],
   },
   devtool: 'eval-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };
 
 export default config;

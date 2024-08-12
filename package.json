@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server  --port 4000",
     "build": "webpack --config webpack.config.ts",
     "watch": "webpack -w",
-    "lint": "eslint --fix --ext .js,.ts --ignore-path .gitignore ."
+    "lint": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
+    "deploy": "npm run build && gh-pages -d dist -m \"Updates --skip-ci\""
   },
   "keywords": [],
   "author": "naotaro0123",
@@ -19,6 +20,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^5.2.1",
+    "gh-pages": "^6.1.1",
+    "html-webpack-plugin": "^5.6.0",
     "prettier": "^3.3.3",
     "tone": "^15.0.4",
     "ts-loader": "^9.5.1",
